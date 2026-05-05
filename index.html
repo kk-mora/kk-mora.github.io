@@ -149,44 +149,13 @@
     max-width: 460px;
   }
 
-  .hero-rect {
+  .hero-photo {
     width: 100%;
-    aspect-ratio: 3/4;
-    background: var(--paper-warm);
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
     border: 0.5px solid var(--accent-soft);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-rect::before {
-    content: '';
-    position: absolute;
-    top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;
-    border: 0.5px solid var(--line);
-  }
-
-  .hero-rect-text {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    right: 3rem;
-  }
-
-  .hero-rect-quote {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-
-  .hero-rect-author {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-soft);
   }
 
   .hero-line-decor {
@@ -524,7 +493,10 @@
 
   /* MOBILE */
   @media (max-width: 768px) {
-    nav { padding: 1.2rem 1.5rem; }
+    nav {
+      padding: 1.2rem 1.5rem;
+    }
+
     .nav-links { display: none; }
 
     .hero {
@@ -534,7 +506,7 @@
     }
 
     .hero-right { order: -1; }
-    .hero-rect { max-width: 100%; }
+    .hero-photo { max-width: 100%; aspect-ratio: 3/4; }
 
     section { padding: 4rem 1.5rem; }
 
@@ -578,7 +550,7 @@
 <section class="hero">
   <div class="hero-left">
     <span class="hero-label">Берлин · онлайн</span>
-    <h1 class="hero-title">гештальт-<br><em>терапевт</em></h1>
+    <h1 class="hero-title">гештальт-<br><em>психолог</em></h1>
     <p class="hero-subtitle">
       Работаю с тем, что нельзя сформулировать сразу.<br>
       Вина, бессилие, обида, стыд — не темы для разбора,<br>
@@ -588,12 +560,11 @@
   </div>
   <div class="hero-right">
     <div class="hero-visual">
-      <div class="hero-rect">
-        <div class="hero-rect-text">
-          <p class="hero-rect-quote">То, что происходит на встрече, — рождается из встречи.</p>
-          <span class="hero-rect-author">Татьяна Армина</span>
-        </div>
-      </div>
+      <img
+        src="https://kk-mora.github.io/logo.jpeg"
+        alt="Татьяна Армина"
+        class="hero-photo"
+      >
       <div class="hero-line-decor"></div>
     </div>
   </div>
@@ -628,10 +599,6 @@
       <div class="credential-item">
         <div class="credential-dot"></div>
         <span class="credential-text">Регулярная супервизия</span>
-      </div>
-      <div class="credential-item">
-        <div class="credential-dot"></div>
-        <span class="credential-text">HPP — Heilpraktiker Psychotherapie</span>
       </div>
     </div>
   </div>
@@ -681,7 +648,6 @@
     <div class="how-left fade-in">
       <h2>не протокол.<br><em>встреча.</em></h2>
       <p>Сессии онлайн, 50 минут. Частота — по договорённости, обычно раз в неделю.</p>
-      <p>Первая встреча — знакомство. Без обязательств. Просто посмотреть, есть ли контакт.</p>
     </div>
     <div class="how-right fade-in">
       <div class="how-item">
@@ -707,8 +673,8 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <span class="section-label" style="display:block; text-align:center;">04 / контакт</span>
-  <h2>если в поиске<br><em>терапевта</em></h2>
-  <p class="contact-sub">Пишите в телеграм. Там отвечаю сама и там же веду канал о том, что меня занимает.</p>
+  <h2>если ищете<br><em>психолога</em></h2>
+  <p class="contact-sub">Пишите в телеграм. Там же веду канал о том, что меня занимает.</p>
   <div class="contact-links">
     <a href="https://t.me/kkm0ra" class="contact-link" target="_blank">telegram @kkm0ra</a>
   </div>
@@ -716,11 +682,13 @@
 </section>
 
 <footer>
-  <span>© Татьяна Армина, 2025</span>
+  <span>© Татьяна Армина, <span id="year"></span></span>
   <a href="https://t.me/kkm0ra" target="_blank">@kkm0ra</a>
 </footer>
 
 <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
