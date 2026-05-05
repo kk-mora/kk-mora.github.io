@@ -1,84 +1,735 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Татьяна Армина — гештальт-терапевт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <meta name="description" content="˗ˏˋ 𓅰 ˎˊ˗ слияние в отношениях, запрет на агрессию, страх публичных вступлений. консультации онлайн">
-    
-    <title>Татьяна Армина, гештальт-психолог</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        body {
-            font-family: Georgia, serif; 
-            background-color: #ffffff;
-            color: #000000;
-            line-height: 1.2;
-            margin: 15px;
-            padding: 0;
-            margin-bottom: 15px;
-        }
-        .container {
-            width: 95%;
-            margin: 0 auto;
-            padding: 0px;
-        }
-        h1 {
-            text-align: left;
-            color: #000000;
-            font-size: 24px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 23px; 
-            margin-top: 45px;
-            margin-bottom: 12px;
-        }
-        a {
-            color: #FF0000; 
-            text-decoration: none;
-        }
-        a:hover {
-            color: #C50000; 
-        }
-        p {
-            font-size: 19px; 
-            margin-top: 9px;
-            margin-bottom: 5px;
-            color: #000000;
-        }
-    </style>
+  :root {
+    --ink: #1a1a18;
+    --ink-soft: #4a4a44;
+    --paper: #f5f2eb;
+    --paper-warm: #ede9e0;
+    --accent: #8b5e3c;
+    --accent-soft: #c4a882;
+    --line: rgba(26,26,24,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: var(--paper);
+    border-bottom: 0.5px solid var(--line);
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    gap: 4rem;
+  }
+
+  .hero-left {
+    position: relative;
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    max-width: 38ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .hero-cta:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-visual {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .hero-rect {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--paper-warm);
+    border: 0.5px solid var(--accent-soft);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-rect::before {
+    content: '';
+    position: absolute;
+    top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;
+    border: 0.5px solid var(--line);
+  }
+
+  .hero-rect-text {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+  }
+
+  .hero-rect-quote {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .hero-rect-author {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+  }
+
+  .hero-line-decor {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 180px;
+    height: 180px;
+    border: 0.5px solid var(--line);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 6rem 4rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--paper-warm);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-side {
+    position: sticky;
+    top: 8rem;
+  }
+
+  .about-number {
+    font-family: var(--serif);
+    font-size: 7rem;
+    font-weight: 300;
+    color: var(--line);
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  .about-side-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .about-body {
+    padding-top: 0.5rem;
+  }
+
+  .about-h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  .about-h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .about-p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    max-width: 55ch;
+  }
+
+  .about-credentials {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .credential-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .credential-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    top: -2px;
+  }
+
+  .credential-text {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  /* WORK */
+  .work {
+    background: var(--paper);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 0.5px solid var(--line);
+    margin-top: 1rem;
+  }
+
+  .work-card {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+
+  .work-card:hover {
+    background: var(--paper-warm);
+  }
+
+  .work-card-num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .work-card-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .work-card-text {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  /* HOW */
+  .how {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .how .section-label {
+    color: var(--accent-soft);
+  }
+
+  .how-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .how-left h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--paper);
+    margin-bottom: 2rem;
+  }
+
+  .how-left h2 em {
+    font-style: italic;
+    color: var(--accent-soft);
+  }
+
+  .how-left p {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: rgba(245,242,235,0.65);
+    max-width: 42ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .how-right {
+    padding-top: 0.5rem;
+  }
+
+  .how-item {
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid rgba(245,242,235,0.12);
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+  }
+
+  .how-item:first-child {
+    border-top: 0.5px solid rgba(245,242,235,0.12);
+  }
+
+  .how-item-n {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    flex-shrink: 0;
+    width: 1.5rem;
+  }
+
+  .how-item-text {
+    font-size: 0.82rem;
+    color: rgba(245,242,235,0.75);
+    line-height: 1.8;
+  }
+
+  .how-item-text strong {
+    color: var(--paper);
+    font-weight: 400;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--paper-warm);
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-sub {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    max-width: 40ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.9;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .contact-location {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--line);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,235,0.4);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer a {
+    color: rgba(245,242,235,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: var(--accent-soft);
+  }
+
+  /* FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 6rem 1.5rem 3rem;
+      gap: 2.5rem;
+    }
+
+    .hero-right { order: -1; }
+    .hero-rect { max-width: 100%; }
+
+    section { padding: 4rem 1.5rem; }
+
+    .about {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-side { position: static; }
+    .about-number { font-size: 4rem; }
+
+    .work-grid { grid-template-columns: 1fr; }
+
+    .how-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    footer {
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Татьяна Армина, гештальт-психолог  𓆏</h1>
-        <img src="kk-mora.github.io/logo.jpeg" alt="лого" width="351" height="234">
 
-        <p>часто силы уходят не на жизнь, а на удерживание: подавлять злость, глотать стыд, быть «удобным»,</p>
-<p> и жить «как удобно другим» становится привычкой. я работаю с тем, когда трудно быть в контакте с собой</p>
-<h2>например</h2>
-<p>[ не ясно, что чувствую ]</p>
-<p>[ злость под запретом, на её месте вина и стыд ]</p>
-<p>[ отношения тянут, но уйти из них страшно ]</p>
-<p>[ привычнее подавлять, чем говорить прямо ]</p>
-<p>[ кажется, что нужно быть «удобным» ]</p>
+<nav>
+  <a href="#" class="nav-name">Татьяна Армина</a>
+  <ul class="nav-links">
+    <li><a href="#about">о&nbsp;себе</a></li>
+    <li><a href="#work">работа</a></li>
+    <li><a href="#how">как&nbsp;устроено</a></li>
+    <li><a href="#contact">контакт</a></li>
+  </ul>
+</nav>
 
-
-        <h2>только вы знаете, каково быть вами</h2>
-        <p>на сессии мы исследуем, как формировался этот опыт и что мешает сейчас. терапия — это равный диалог. </p>
-        <p>гештальт-подход — про проживание и узнавание чувств. про возвращение себе слов, голоса, опоры.</p>
-        <p>напряжение уходит не потому, что его убрали, а потому что оно становится прожитым и осознанным. </p>
-
-
-        <h2>консультация – 55€/час</h2>
-        
-        <p>запись и вопросы -- <a href="https://t.me/kkm0ra">@kkm0ra</a>, почта -- <a href="mailto:kikim0ra@mail.de">kikim0ra@mail.de</a></p>
-        <p>заметки -- <a href="https://t.me/kkikkimmorra">@канал</a></p>
-        
-        <p><a href="https://www.youtube.com/@Kiki-mora" target="_blank">-- YouTube --</a><p>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-label">Берлин · онлайн</span>
+    <h1 class="hero-title">гештальт-<br><em>терапевт</em></h1>
+    <p class="hero-subtitle">
+      Работаю с тем, что нельзя сформулировать сразу.<br>
+      Вина, бессилие, обида, стыд — не темы для разбора,<br>
+      а живой материал встречи.
+    </p>
+    <a href="#contact" class="hero-cta">написать мне</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-rect">
+        <div class="hero-rect-text">
+          <p class="hero-rect-quote">То, что происходит на встрече, — рождается из встречи.</p>
+          <span class="hero-rect-author">Татьяна Армина</span>
+        </div>
+      </div>
+      <div class="hero-line-decor"></div>
     </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-side fade-in">
+    <div class="about-number">01</div>
+    <span class="about-side-label">о&nbsp;себе</span>
+  </div>
+  <div class="about-body fade-in">
+    <h2 class="about-h2">два года практики.<br><em>четыре — собственной терапии.</em></h2>
+    <p class="about-p">
+      Сама заходила в терапию с виной, бессилием, подавленной агрессией. Работаю с тем же — не потому что положено по протоколу, а потому что знаю это телесно.
+    </p>
+    <p class="about-p">
+      Особенно близко — созависимость, обида на родителей, фрустрация желаний, вина и стыд. И то, что происходит, когда живёшь не в той стране, где вырос.
+    </p>
+    <p class="about-p">
+      В гештальте нет домашних заданий и тем, о которых нельзя говорить.
+    </p>
+    <div class="about-credentials">
+      <div class="credential-item">
+        <div class="credential-dot"></div>
+        <span class="credential-text">Inkontakt Gestalt Institut Berlin</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-dot"></div>
+        <span class="credential-text">Групповая динамическая терапия</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-dot"></div>
+        <span class="credential-text">Регулярная супервизия</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-dot"></div>
+        <span class="credential-text">HPP — Heilpraktiker Psychotherapie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <span class="section-label">02 / с чем работаю</span>
+  <div class="work-grid">
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;01</span>
+      <h3 class="work-card-title">вина и стыд</h3>
+      <p class="work-card-text">Не убрать, а разобраться — откуда, чья это вина и что она сторожит.</p>
+    </div>
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;02</span>
+      <h3 class="work-card-title">обида на родителей</h3>
+      <p class="work-card-text">Застрявшие отношения, которые продолжаются внутри, даже когда снаружи всё вроде нормально.</p>
+    </div>
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;03</span>
+      <h3 class="work-card-title">созависимость</h3>
+      <p class="work-card-text">Когда другой человек становится центром — а своё растворяется или пропадает.</p>
+    </div>
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;04</span>
+      <h3 class="work-card-title">бессилие и агрессия</h3>
+      <p class="work-card-text">Агрессия — это энергия. Вопрос не в том, чтобы её не было, а в том, куда она идёт.</p>
+    </div>
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;05</span>
+      <h3 class="work-card-title">эмиграция и идентичность</h3>
+      <p class="work-card-text">Жить не там, где вырос. Потеря почвы, языка, своего места в пространстве.</p>
+    </div>
+    <div class="work-card fade-in">
+      <span class="work-card-num">—&nbsp;06</span>
+      <h3 class="work-card-title">фрустрация желаний</h3>
+      <p class="work-card-text">Когда хочется — но не берёшь. Или не знаешь, чего хочешь. Или знаешь, но это кажется нельзя.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <span class="section-label">03 / как устроена работа</span>
+  <div class="how-inner">
+    <div class="how-left fade-in">
+      <h2>не протокол.<br><em>встреча.</em></h2>
+      <p>Сессии онлайн, 50 минут. Частота — по договорённости, обычно раз в неделю.</p>
+      <p>Первая встреча — знакомство. Без обязательств. Просто посмотреть, есть ли контакт.</p>
+    </div>
+    <div class="how-right fade-in">
+      <div class="how-item">
+        <span class="how-item-n">01</span>
+        <p class="how-item-text"><strong>Онлайн-сессии</strong> — 50 минут, видео или голос. Работаю с русскоязычными клиентами по всему миру.</p>
+      </div>
+      <div class="how-item">
+        <span class="how-item-n">02</span>
+        <p class="how-item-text"><strong>Индивидуальная терапия</strong> — регулярная работа, один раз в неделю или раз в две недели.</p>
+      </div>
+      <div class="how-item">
+        <span class="how-item-n">03</span>
+        <p class="how-item-text"><strong>Разовые консультации</strong> — если нужно разобраться в конкретной ситуации, не в долгосрочном процессе.</p>
+      </div>
+      <div class="how-item">
+        <span class="how-item-n">04</span>
+        <p class="how-item-text"><strong>Первая встреча</strong> — знакомство без обязательств. Пишите в телеграм, договоримся о времени.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="section-label" style="display:block; text-align:center;">04 / контакт</span>
+  <h2>если в поиске<br><em>терапевта</em></h2>
+  <p class="contact-sub">Пишите в телеграм. Там отвечаю сама и там же веду канал о том, что меня занимает.</p>
+  <div class="contact-links">
+    <a href="https://t.me/kkm0ra" class="contact-link" target="_blank">telegram @kkm0ra</a>
+  </div>
+  <p class="contact-location">Берлин · онлайн · для русскоязычных</p>
+</section>
+
+<footer>
+  <span>© Татьяна Армина, 2025</span>
+  <a href="https://t.me/kkm0ra" target="_blank">@kkm0ra</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
