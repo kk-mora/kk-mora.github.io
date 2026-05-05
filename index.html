@@ -111,11 +111,11 @@
   }
 
   .hero-subtitle {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
     color: var(--ink-soft);
-    line-height: 1.9;
-    max-width: 38ch;
+    line-height: 2;
+    max-width: 40ch;
     margin-bottom: 3rem;
   }
 
@@ -271,49 +271,52 @@
     letter-spacing: 0.02em;
   }
 
-  /* WORK */
+  /* WORK — переработан: без сетки, просто список */
   .work {
     background: var(--paper);
   }
 
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 0.5px solid var(--line);
+  .work-list {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
   }
 
-  .work-card {
-    background: var(--paper);
-    padding: 2.5rem 2rem;
-    transition: background 0.3s;
+  .work-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr 2fr;
+    gap: 2rem;
+    align-items: baseline;
+    padding: 2rem 0;
+    border-bottom: 0.5px solid var(--line);
+    transition: opacity 0.2s;
   }
 
-  .work-card:hover {
-    background: var(--paper-warm);
+  .work-item:first-child {
+    border-top: 0.5px solid var(--line);
   }
 
-  .work-card-num {
+  .work-item:hover .work-item-title {
+    color: var(--accent);
+  }
+
+  .work-item-num {
     font-family: var(--serif);
     font-size: 0.85rem;
     color: var(--accent-soft);
-    margin-bottom: 1.2rem;
-    display: block;
   }
 
-  .work-card-title {
+  .work-item-title {
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 300;
     color: var(--ink);
     line-height: 1.3;
-    margin-bottom: 1rem;
+    transition: color 0.2s;
   }
 
-  .work-card-text {
-    font-size: 0.78rem;
+  .work-item-text {
+    font-size: 0.82rem;
     color: var(--ink-soft);
     line-height: 1.85;
   }
@@ -518,7 +521,10 @@
     .about-side { position: static; }
     .about-number { font-size: 4rem; }
 
-    .work-grid { grid-template-columns: 1fr; }
+    .work-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
 
     .how-inner {
       grid-template-columns: 1fr;
@@ -552,9 +558,10 @@
     <span class="hero-label">Берлин · онлайн</span>
     <h1 class="hero-title">гештальт-<br><em>психолог</em></h1>
     <p class="hero-subtitle">
-      Работаю с тем, что нельзя сформулировать сразу.<br>
-      Вина, бессилие, обида, стыд — не темы для разбора,<br>
-      а живой материал встречи.
+      Не надо знать, с чем именно прийти.<br>
+      Иногда есть только ощущение — что что-то не так,<br>
+      что застряло, что устала.<br>
+      Этого достаточно, чтобы начать.
     </p>
     <a href="#contact" class="hero-cta">написать мне</a>
   </div>
@@ -607,36 +614,36 @@
 <!-- WORK -->
 <section class="work" id="work">
   <span class="section-label">02 / с чем работаю</span>
-  <div class="work-grid">
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;01</span>
-      <h3 class="work-card-title">вина и стыд</h3>
-      <p class="work-card-text">разобраться — откуда, чья это вина и что она сторожит.</p>
+  <div class="work-list">
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;01</span>
+      <h3 class="work-item-title">вина и стыд</h3>
+      <p class="work-item-text">Не убрать, а разобраться — откуда, чья это вина и что она сторожит.</p>
     </div>
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;02</span>
-      <h3 class="work-card-title">обида на родителей</h3>
-      <p class="work-card-text">Застрявшие отношения, которые продолжаются внутри, даже когда снаружи всё вроде нормально.</p>
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;02</span>
+      <h3 class="work-item-title">обида на родителей</h3>
+      <p class="work-item-text">Застрявшие отношения, которые продолжаются внутри, даже когда снаружи всё вроде нормально.</p>
     </div>
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;03</span>
-      <h3 class="work-card-title">созависимость</h3>
-      <p class="work-card-text">Когда другой человек становится центром — а своё растворяется или пропадает.</p>
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;03</span>
+      <h3 class="work-item-title">созависимость</h3>
+      <p class="work-item-text">Когда другой человек становится центром — а своё растворяется или пропадает.</p>
     </div>
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;04</span>
-      <h3 class="work-card-title">бессилие и агрессия</h3>
-      <p class="work-card-text">Агрессия — это энергия. Вопрос не в том, чтобы её не было, а в том, куда она идёт.</p>
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;04</span>
+      <h3 class="work-item-title">бессилие и агрессия</h3>
+      <p class="work-item-text">Агрессия — это энергия. Вопрос не в том, чтобы её не было, а в том, куда она идёт.</p>
     </div>
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;05</span>
-      <h3 class="work-card-title">эмиграция и идентичность</h3>
-      <p class="work-card-text">Жить не там, где вырос. Потеря почвы, языка, своего места в пространстве.</p>
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;05</span>
+      <h3 class="work-item-title">эмиграция и идентичность</h3>
+      <p class="work-item-text">Жить не там, где вырос. Потеря почвы, языка, своего места в пространстве.</p>
     </div>
-    <div class="work-card fade-in">
-      <span class="work-card-num">—&nbsp;06</span>
-      <h3 class="work-card-title">фрустрация желаний</h3>
-      <p class="work-card-text">Когда хочется — но не берёшь. Или не знаешь, чего хочешь. Или знаешь, но это кажется нельзя.</p>
+    <div class="work-item fade-in">
+      <span class="work-item-num">—&nbsp;06</span>
+      <h3 class="work-item-title">фрустрация желаний</h3>
+      <p class="work-item-text">Когда хочется — но не берёшь. Или не знаешь, чего хочешь. Или знаешь, но это кажется нельзя.</p>
     </div>
   </div>
 </section>
