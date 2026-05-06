@@ -1,4 +1,3 @@
-«— Думай о смысле, а слова придут сами. Завтра никогда не бывает сегодня! Разве можно проснуться поутру и сказать: «Ну вот, сейчас, наконец, завтра»?»
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,7 +34,6 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -74,7 +72,6 @@
 
   .nav-links a:hover { color: var(--ink); }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -82,10 +79,6 @@
     align-items: center;
     padding: 8rem 4rem 4rem;
     gap: 4rem;
-  }
-
-  .hero-left {
-    position: relative;
   }
 
   .hero-label {
@@ -106,18 +99,26 @@
     margin-bottom: 2rem;
   }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .hero-title em { font-style: italic; color: var(--accent); }
 
   .hero-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 300;
     color: var(--ink-soft);
-    line-height: 2;
+    line-height: 1.75;
     max-width: 40ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle-author {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
     margin-bottom: 3rem;
+    display: block;
   }
 
   .hero-cta {
@@ -132,10 +133,7 @@
     transition: color 0.2s, border-color 0.2s;
   }
 
-  .hero-cta:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+  .hero-cta:hover { color: var(--accent); border-color: var(--accent); }
 
   .hero-right {
     position: relative;
@@ -170,10 +168,7 @@
     pointer-events: none;
   }
 
-  /* SECTION BASE */
-  section {
-    padding: 6rem 4rem;
-  }
+  section { padding: 6rem 4rem; }
 
   .section-label {
     font-size: 0.65rem;
@@ -193,10 +188,7 @@
     align-items: start;
   }
 
-  .about-side {
-    position: sticky;
-    top: 8rem;
-  }
+  .about-side { position: sticky; top: 8rem; }
 
   .about-number {
     font-family: var(--serif);
@@ -215,9 +207,7 @@
     color: var(--ink-soft);
   }
 
-  .about-body {
-    padding-top: 0.5rem;
-  }
+  .about-body { padding-top: 0.5rem; }
 
   .about-h2 {
     font-family: var(--serif);
@@ -228,10 +218,7 @@
     color: var(--ink);
   }
 
-  .about-h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .about-h2 em { font-style: italic; color: var(--accent); }
 
   .about-p {
     font-size: 0.9rem;
@@ -250,15 +237,10 @@
     gap: 0.75rem;
   }
 
-  .credential-item {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-  }
+  .credential-item { display: flex; align-items: baseline; gap: 1rem; }
 
   .credential-dot {
-    width: 4px;
-    height: 4px;
+    width: 4px; height: 4px;
     background: var(--accent);
     border-radius: 50%;
     flex-shrink: 0;
@@ -266,241 +248,134 @@
     top: -2px;
   }
 
-  .credential-text {
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-    letter-spacing: 0.02em;
-  }
+  .credential-text { font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.02em; }
 
-  /* WORK — переработан: без сетки, просто список */
-  .work {
-    background: var(--paper);
-  }
+  /* WORK */
+  .work { background: var(--paper); }
 
-  .work-list {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
+  .work-list { margin-top: 1rem; display: flex; flex-direction: column; }
 
   .work-item {
     display: grid;
-    grid-template-columns: 3rem 1fr 2fr;
-    gap: 2rem;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1.5rem;
     align-items: baseline;
-    padding: 2rem 0;
+    padding: 0.85rem 0;
     border-bottom: 0.5px solid var(--line);
-    transition: opacity 0.2s;
   }
 
-  .work-item:first-child {
-    border-top: 0.5px solid var(--line);
-  }
+  .work-item:first-child { border-top: 0.5px solid var(--line); }
 
-  .work-item:hover .work-item-title {
-    color: var(--accent);
-  }
-
-  .work-item-num {
+  .work-item-dash {
     font-family: var(--serif);
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--accent-soft);
+    line-height: 1.75;
   }
 
-  .work-item-title {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1.3;
-    transition: color 0.2s;
-  }
+  .work-item-text { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; }
 
-  .work-item-text {
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    line-height: 1.85;
-  }
-
-  /* HOW */
-  .how {
+  /* CONTACT + SESSION */
+  .contact-session {
     background: var(--ink);
     color: var(--paper);
   }
 
-  .how .section-label {
-    color: var(--accent-soft);
+  .contact-session .section-label { color: var(--accent-soft); }
+
+  .contact-session-inner {
+    display: block;
+    max-width: 48ch;
   }
 
-  .how-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-
-  .how-left h2 {
+  .cs-left h2 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 300;
-    line-height: 1.25;
     color: var(--paper);
+    line-height: 1.1;
     margin-bottom: 2rem;
   }
 
-  .how-left h2 em {
-    font-style: italic;
-    color: var(--accent-soft);
-  }
+  .cs-left h2 em { font-style: italic; color: var(--accent-soft); }
 
-  .how-left p {
+  .cs-left p {
     font-size: 0.85rem;
     line-height: 1.9;
-    color: rgba(245,242,235,0.65);
-    max-width: 42ch;
-    margin-bottom: 1.5rem;
-  }
-
-  .how-right {
-    padding-top: 0.5rem;
-  }
-
-  .how-item {
-    padding: 1.5rem 0;
-    border-bottom: 0.5px solid rgba(245,242,235,0.12);
-    display: flex;
-    gap: 2rem;
-    align-items: baseline;
-  }
-
-  .how-item:first-child {
-    border-top: 0.5px solid rgba(245,242,235,0.12);
-  }
-
-  .how-item-n {
-    font-family: var(--serif);
-    font-size: 0.85rem;
-    color: var(--accent-soft);
-    flex-shrink: 0;
-    width: 1.5rem;
-  }
-
-  .how-item-text {
-    font-size: 0.82rem;
-    color: rgba(245,242,235,0.75);
-    line-height: 1.8;
-  }
-
-  .how-item-text strong {
-    color: var(--paper);
-    font-weight: 400;
-  }
-
-  /* CONTACT */
-  .contact {
-    background: var(--paper-warm);
-    text-align: center;
-  }
-
-  .contact h2 {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  .contact h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .contact-sub {
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
-    margin-bottom: 3rem;
+    color: rgba(245,242,235,0.6);
     max-width: 40ch;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.9;
+    margin-bottom: 1rem;
   }
 
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
+  .cs-link {
+    display: inline-block;
+    margin-top: 1.5rem;
     font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--paper);
     text-decoration: none;
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid rgba(245,242,235,0.35);
     padding-bottom: 3px;
-    transition: color 0.2s, border-color 0.2s;
+    transition: border-color 0.2s, color 0.2s;
   }
 
-  .contact-link:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+  .cs-link:hover { border-color: var(--accent-soft); color: var(--accent-soft); }
 
-  .contact-location {
-    margin-top: 4rem;
+  .cs-location {
+    margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 0.5px solid var(--line);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    border-top: 0.5px solid rgba(245,242,235,0.1);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent-soft);
+    color: rgba(245,242,235,0.25);
   }
 
-  /* FOOTER */
+  .cs-right { padding-top: 0.5rem; }
+
+  .cs-item {
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid rgba(245,242,235,0.1);
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  .cs-item:first-child { border-top: 0.5px solid rgba(245,242,235,0.1); }
+
+  .cs-item-n { font-family: var(--serif); font-size: 0.8rem; color: var(--accent-soft); }
+
+  .cs-item-text { font-size: 0.82rem; color: rgba(245,242,235,0.6); line-height: 1.85; }
+
+  .cs-item-text strong { color: var(--paper); font-weight: 400; }
+
   footer {
     background: var(--ink);
-    color: rgba(245,242,235,0.4);
-    padding: 2rem 4rem;
+    color: rgba(245,242,235,0.25);
+    padding: 1.5rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
+    border-top: 0.5px solid rgba(245,242,235,0.07);
   }
 
-  footer a {
-    color: rgba(245,242,235,0.4);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  footer a { color: rgba(245,242,235,0.25); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--accent-soft); }
 
-  footer a:hover {
-    color: var(--accent-soft);
-  }
-
-  /* FADE IN */
   .fade-in {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* MOBILE */
   @media (max-width: 768px) {
-    nav {
-      padding: 1.2rem 1.5rem;
-    }
-
+    nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
 
     .hero {
@@ -514,30 +389,15 @@
 
     section { padding: 4rem 1.5rem; }
 
-    .about {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
+    .about { grid-template-columns: 1fr; gap: 2rem; }
     .about-side { position: static; }
     .about-number { font-size: 4rem; }
 
-    .work-item {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
-    }
+    .work-item { grid-template-columns: 1.5rem 1fr; gap: 1rem; }
 
-    .how-inner {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
+    .contact-session-inner { grid-template-columns: 1fr; gap: 3rem; }
 
-    footer {
-      padding: 1.5rem;
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-    }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
@@ -547,36 +407,26 @@
   <a href="#" class="nav-name">Татьяна Армина</a>
   <ul class="nav-links">
     <li><a href="#about">о&nbsp;себе</a></li>
-    <li><a href="#work">запрос</a></li>
-    <li><a href="#how">встречи</a></li>
-    <li><a href="#contact">контакт</a></li>
+    <li><a href="#contact">встреча</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <span class="hero-label">Берлин · онлайн</span>
     <h1 class="hero-title">гештальт-<br><em>психолог</em></h1>
-    <p class="hero-subtitle">
-      «Я… я с трудом понимаю, кто я сейчас.<br>
-      Точно знаю лишь, кем была сегодня утром, однако с тех пор я изменилась много раз.» – Алиса<br>
-    </p>
+    <p class="hero-subtitle">«Я… я с трудом понимаю, кто я сейчас. Точно знаю лишь, кем была сегодня утром, однако с тех пор я изменилась много раз.»</p>
+    <span class="hero-subtitle-author">Алиса в стране чудес</span>
     <a href="#contact" class="hero-cta">написать</a>
   </div>
   <div class="hero-right">
     <div class="hero-visual">
-      <img
-        src="https://kk-mora.github.io/logo.jpeg"
-        alt="Татьяна Армина"
-        class="hero-photo"
-      >
+      <img src="https://kk-mora.github.io/logo.jpeg" alt="Татьяна Армина" class="hero-photo">
       <div class="hero-line-decor"></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-side fade-in">
     <div class="about-number">01</div>
@@ -584,15 +434,9 @@
   </div>
   <div class="about-body fade-in">
     <h2 class="about-h2">два года практики.<br><em>четыре — личной терапии.</em></h2>
-    <p class="about-p">
-      Сама заходила в терапию с виной, бессилием, подавленной агрессией. Работаю с тем же.
-    </p>
-    <p class="about-p">
-      Живу в эмиграции десять лет, почва уходила не раз.
-    </p>
-    <p class="about-p">
-      Близкие темы — вина и стыд, созависимость, обида на родителей, бессилие
-    </p>
+    <p class="about-p">Сама заходила в терапию с виной, бессилием, подавленной агрессией. Работаю с тем же.</p>
+    <p class="about-p">Живу в эмиграции десять лет, почва уходила не раз.</p>
+    <p class="about-p">Близкие темы — вина и стыд, созависимость, обида на родителей, бессилие.</p>
     <div class="about-credentials">
       <div class="credential-item">
         <div class="credential-dot"></div>
@@ -610,57 +454,19 @@
   </div>
 </section>
 
-<!-- WORK -->
-<section class="work" id="work">
-  <span class="section-label">02 / часто работаю с</span>
-  <div class="work-list">
-    <div class="work-item fade-in">
-      <p class="work-item-text">чувствую что виновата — но не могу понять перед кем и за что.</p>
-    </div>
-    <div class="work-item fade-in">
-      <p class="work-item-text">застрявшие отношения, которые продолжаются внутри.</p>
-    </div>
-    <div class="work-item fade-in">
-      <p class="work-item-text">знаю чего хочет другой лучше чем то, чего хочу сама.</p>
-    </div>
-    <div class="work-item fade-in">
-      <p class="work-item-text">злюсь — и тут же стыжусь что злюсь.</p>
-    </div>
-    <div class="work-item fade-in">
-      <p class="work-item-text">никак не могу почувствовать себя на месте.</p>
-    </div>
-    <div class="work-item fade-in">
-      <p class="work-item-text">хочется — но как будто нельзя. или не знаю чего хочу.</p>
-    </div>
-  </div>
-</section>
 
-<!-- HOW -->
-<section class="how" id="how">
-  <span class="section-label">03 / сессия</span>
-  <div class="how-inner">
-    <div class="how-left fade-in">
-      <h2><em>встреча.</em></h2>
-      <p>Сессии онлайн, 50 минут. €45. Частота — по договорённости, обычно раз в неделю.</p>
-    </div>
-    <div class="how-right fade-in">
-      <div class="how-item">
-        <span class="how-item-n">01</span>
-        <p class="how-item-text"><strong>Работаю с русскоязычными клиентами по всему миру</strong>. Первая встреча — знакомство. Пишите в телеграм</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <span class="section-label" style="display:block; text-align:center;">04 / контакт</span>
-  <h2>если ищете<br><em>психолога</em></h2>
-  <p class="contact-sub">Напишите в телеграм. Там же веду канал.</p>
-  <div class="contact-links">
-    <a href="https://t.me/kkm0ra" class="contact-link" target="_blank">telegram @kkm0ra</a>
+<section class="contact-session" id="contact">
+  <span class="section-label">03 / встреча</span>
+  <div class="contact-session-inner">
+    <div class="cs-left fade-in">
+      <h2>если ищете<br><em>психолога</em></h2>
+      <p>Сессии онлайн, 50 минут. €45. Обычно раз в неделю.</p>
+      <a href="https://t.me/kkm0ra" class="cs-link" target="_blank">напишите мне в телеграм</a>
+      <p class="cs-location">Берлин · онлайн · для русскоязычных</p>
+    </div>
+
   </div>
-  <p class="contact-location">Берлин · онлайн · для русскоязычных</p>
 </section>
 
 <footer>
@@ -670,15 +476,9 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
