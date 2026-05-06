@@ -284,8 +284,19 @@
   .contact-session .section-label { color: var(--accent-soft); }
 
   .contact-session-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .cs-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    max-width: 48ch;
+    border: 0.5px solid rgba(245,242,235,0.1);
   }
 
   .cs-left h2 {
@@ -397,6 +408,7 @@
 
     .contact-session-inner { grid-template-columns: 1fr; gap: 3rem; }
 
+    .contact-session-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -465,7 +477,9 @@
       <a href="https://t.me/kkm0ra" class="cs-link" target="_blank">напишите мне в телеграм</a>
       <p class="cs-location">Берлин · онлайн · для русскоязычных</p>
     </div>
-
+    <div class="fade-in">
+      <img src="https://kk-mora.github.io/inkontakt%20gestalt%202.jpg" alt="Inkontakt Gestalt Institut Berlin" class="cs-photo">
+    </div>
   </div>
 </section>
 
